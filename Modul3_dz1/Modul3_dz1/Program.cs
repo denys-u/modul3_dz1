@@ -1,12 +1,37 @@
-﻿using System;
-
-namespace Modul3_dz1
+﻿namespace Modul3_dz1
 {
-    class Program
+    using System;
+    using System.Collections.Generic;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var myList = new MyList<int>(5) { 6, 8, 9, 2 };
+            var array = new MyList<int> { 4, 6, 9, 3, 7, 1, 5 };
+
+            myList.AddRange(array);
+
+            myList.Capasity = 2;
+
+            Console.WriteLine($"Count = {myList.Count} Capasity = {myList.Capasity}");
+
+            foreach (var item in myList)
+            {
+                Console.WriteLine($"{item}");
+            }
+
+            myList.Remove(4);
+            myList.RemoveAt(4);
+
+            myList.Sort(new IntComparer());
+
+            Console.WriteLine($"Count = {myList.Count} Capasity = {myList.Capasity}");
+
+            foreach (var item in myList)
+            {
+                Console.WriteLine($"{item}");
+            }
         }
     }
 }
