@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "sd15ztmnsV1h7w18PO526bdx9qUtSuMm7YmnPTHu+onM10/qLHiDyOz7NsB8ftQ9kq5O/+Vdh8DPxWt8W4h+Zw==",
+  "dgSpecHash": "yWGikmlU6uag+YQ0GH8BJDjZQ+QVL9dLl2y85N+0g4PY5EOqRHCcvlBswdQ6YxFpAga54sRgnqH211iivpmw7w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Den\\source\\repos\\Modul3_dz1\\Modul3_dz1\\Modul3_dz1\\Modul3_dz1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Den\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
   "logs": []
 }
