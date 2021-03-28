@@ -23,5 +23,24 @@
             : this(DefaultCount)
         {
         }
+
+        public int Capacity
+        {
+            get
+            {
+                return _capacity;
+            }
+            set
+            {
+                if (!ValidateSetCapacity(value))
+                {
+                    return;
+                }
+
+                _capacity = value;
+            }
+        }
+
+        public int Count { get; private set; }
     }
 }

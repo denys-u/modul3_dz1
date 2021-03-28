@@ -12,9 +12,9 @@
 
             myList.AddRange(array);
 
-            myList.Capasity = 2;
+            myList.Capacity = 2;
 
-            Console.WriteLine($"Count = {myList.Count} Capasity = {myList.Capasity}");
+            Console.WriteLine($"Count = {myList.Count} Capacity = {myList.Capacity}");
 
             foreach (var item in myList)
             {
@@ -26,7 +26,7 @@
 
             myList.Sort(new IntComparer());
 
-            Console.WriteLine($"Count = {myList.Count} Capasity = {myList.Capasity}");
+            Console.WriteLine($"Count = {myList.Count} Capacity = {myList.Capacity}");
 
             foreach (var item in myList)
             {
