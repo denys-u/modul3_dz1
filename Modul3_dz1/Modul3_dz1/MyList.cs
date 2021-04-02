@@ -139,5 +139,10 @@
                 }
             }
         }
+
+        public void Sort(IComparer<T> comparer)
+        {
+            Array.Sort(_array, comparer);
+        }
     }
 }
