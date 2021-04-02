@@ -57,6 +57,44 @@
             AddItem(item);
         }
 
+        public void AddRange(IReadOnlyCollection<T> array)
+        {
+            var capacity = Count + array.Count;
+
+            if (capacity >= Capacity)
+            {
+                var isSuccess = IncreaseArray(capacity);
+                if (!isSuccess)
+                {
+                    return;
+                }
+
+                foreach (T item in array)
+                {
+                    AddItem(item);
+                }
+            }
+        }
+
+        public bool RemoveAt(int index)
+        {
+            if (index >= Count || index < 0)
+            {
+                return false;
+            }
+
+            var lastIndex = Count - 1;
+            for (var i = index; i < lastIndex; i++)
+            {
+                _array[i] = _array[i + 1];
+            }
+
+            _array[lastIndex] = default(T);
+            Count--;
+
+            return true;
+        }
+
         private bool ValidateSetCapacity(int capacity)
         {
             return capacity > Count;
@@ -66,6 +104,25 @@
         {
             _array[Count] = item;
             Count++;
+        }
+
+        private bool IncreaseArray(int? capacity = null)
+        {
+            var tempArray = _array;
+            if (capacity == null)
+            {
+                _capacity = _capacity * RateFactor;
+            }
+            else
+            {
+                var isValidCapacity = ValidateSetCapacity(capacity.Value);
+                if (!isValidCapacity)
+                {
+                    return false;
+                }
+
+                _capacity = capacity.Value;
+            }
         }
     }
 }
