@@ -42,5 +42,25 @@
         }
 
         public int Count { get; private set; }
+
+        public void Add(T item)
+        {
+            if (Count == Capacity)
+            {
+                var isSuccess = IncreaseArray();
+                if (!isSuccess)
+                {
+                    return;
+                }
+            }
+
+            AddItem(item);
+        }
+
+        private void AddItem(T item)
+        {
+            _array[Count] = item;
+            Count++;
+        }
     }
 }
