@@ -124,5 +124,20 @@
                 _capacity = capacity.Value;
             }
         }
+
+        public bool Remove(T item)
+        {
+            for (var i = 0; i < Count; i++)
+            {
+                if (_array[i].Equals(item))
+                {
+                    var isSuccess = RemoveAt(i);
+                    if (!isSuccess)
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }
