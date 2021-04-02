@@ -57,6 +57,11 @@
             AddItem(item);
         }
 
+        private bool ValidateSetCapacity(int capacity)
+        {
+            return capacity > Count;
+        }
+
         private void AddItem(T item)
         {
             _array[Count] = item;
