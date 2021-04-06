@@ -144,5 +144,15 @@
         {
             Array.Sort(_array, comparer);
         }
+
+        public IEnumerator GetEnumerator()
+        {
+            return GetGenericEnumerator();
+        }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            return GetGenericEnumerator();
+        }
     }
 }
